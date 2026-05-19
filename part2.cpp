@@ -25,7 +25,7 @@ public:
     double get_B() const { return B; }
     double get_C() const { return C; }
 
-    string get_name() const override { return "Треугольник"; }
+    string get_name() const override { return "РўСЂРµСѓРіРѕР»СЊРЅРёРє"; }
 };
 
 
@@ -35,7 +35,7 @@ public:
         : Triangle(side_a, side_b, side_c, angle_A, angle_B, 90) {
     }
 
-    string get_name() const override { return "Прямоугольный треугольник"; }
+    string get_name() const override { return "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє"; }
 };
 
 
@@ -45,7 +45,7 @@ public:
         : Triangle(side_a, side_b, side_a, angle_A, angle_B, angle_A) {
     }
 
-    string get_name() const override { return "Равнобедренный треугольник"; }
+    string get_name() const override { return "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє"; }
 };
 
 
@@ -55,7 +55,7 @@ public:
         : Triangle(side, side, side, 60, 60, 60) {
     }
 
-    string get_name() const override { return "Равносторонний треугольник"; }
+    string get_name() const override { return "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє"; }
 };
 
 
@@ -78,7 +78,7 @@ public:
     double get_C() const { return C; }
     double get_D() const { return D; }
 
-    string get_name() const override { return "Четырёхугольник"; }
+    string get_name() const override { return "Р§РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРє"; }
 };
 
 
@@ -88,7 +88,7 @@ public:
         : Quadrilateral(side_a, side_b, side_a, side_b, angle_A, angle_B, angle_A, angle_B) {
     }
 
-    string get_name() const override { return "Параллелограмм"; }
+    string get_name() const override { return "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј"; }
 };
 
 
@@ -98,7 +98,7 @@ public:
         : Parallelogram(side_a, side_b, 90, 90) {
     }
 
-    string get_name() const override { return "Прямоугольник"; }
+    string get_name() const override { return "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє"; }
 };
 
 
@@ -108,7 +108,7 @@ public:
         : Parallelogram(side, side, angle_A, angle_B) {
     }
 
-    string get_name() const override { return "Ромб"; }
+    string get_name() const override { return "Р РѕРјР±"; }
 };
 
 
@@ -118,7 +118,7 @@ public:
         : Rectangle(side, side) {
     }
 
-    string get_name() const override { return "Квадрат"; }
+    string get_name() const override { return "РљРІР°РґСЂР°С‚"; }
 };
 
 
@@ -127,20 +127,20 @@ void print_info(const Figure* figure) {
 
 
     if (const Triangle* triangle = dynamic_cast<const Triangle*>(figure)) {
-        cout << "Стороны: a=" << triangle->get_a()
+        cout << "РЎС‚РѕСЂРѕРЅС‹: a=" << triangle->get_a()
             << " b=" << triangle->get_b()
             << " c=" << triangle->get_c() << endl;
-        cout << "Углы: A=" << triangle->get_A()
+        cout << "РЈРіР»С‹: A=" << triangle->get_A()
             << " B=" << triangle->get_B()
             << " C=" << triangle->get_C() << endl;
     }
 
     else if (const Quadrilateral* quad = dynamic_cast<const Quadrilateral*>(figure)) {
-        cout << "Стороны: a=" << quad->get_a()
+        cout << "РЎС‚РѕСЂРѕРЅС‹: a=" << quad->get_a()
             << " b=" << quad->get_b()
             << " c=" << quad->get_c()
             << " d=" << quad->get_d() << endl;
-        cout << "Углы: A=" << quad->get_A()
+        cout << "РЈРіР»С‹: A=" << quad->get_A()
             << " B=" << quad->get_B()
             << " C=" << quad->get_C()
             << " D=" << quad->get_D() << endl;
