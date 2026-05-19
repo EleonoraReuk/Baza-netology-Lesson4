@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -8,7 +8,7 @@ protected:
 	string name;
 
 public:
-	Figure() : sides_count(0), name("Фигура") {}
+	Figure() : sides_count(0), name("Р¤РёРіСѓСЂР°") {}
 
 	Figure(int sides, const string& figure_name)
 		: sides_count(sides), name(figure_name) {}
@@ -26,12 +26,12 @@ public:
 
 class Triangle : public Figure {
 public:
-	Triangle() : Figure(3, "Треугольник") {}
+	Triangle() : Figure(3, "РўСЂРµСѓРіРѕР»СЊРЅРёРє") {}
 };
 
 class Quadrangle : public Figure {
 public:
-	Quadrangle() : Figure(4, "Четырехугольник") {}
+	Quadrangle() : Figure(4, "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє") {}
 };
 
 int main() {
@@ -39,11 +39,10 @@ int main() {
 	Triangle triangle;
 	Quadrangle quadrangle;
 
-	cout << "Количество сторон: " << endl;
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ: " << endl;
 	cout << figure.get_name() << ": " << figure.get_sides_count() << endl;
 	cout << triangle.get_name() << ": " << triangle.get_sides_count() << endl;
 	cout << quadrangle.get_name() << ": " << quadrangle.get_sides_count() << endl;
 
 	return 0;
 }
-*/
