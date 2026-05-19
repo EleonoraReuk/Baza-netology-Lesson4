@@ -11,7 +11,7 @@ protected:
     string name;
     bool correct;
 public:
-    Figure() : sides_count(0), sides(nullptr), angles(nullptr), name("Фигура"), correct(true) {}
+    Figure() : sides_count(0), sides(nullptr), angles(nullptr), name("Р¤РёРіСѓСЂР°"), correct(true) {}
 
     virtual ~Figure() {
         delete[] sides;
@@ -25,22 +25,22 @@ public:
     virtual void print_info() {
         cout << name << ":" << endl;
         if (check()) {
-            cout << "Правильная" << endl;
+            cout << "РџСЂР°РІРёР»СЊРЅР°СЏ" << endl;
         }
         else {
-            cout << "Неправильная" << endl;
+            cout << "РќРµРїСЂР°РІРёР»СЊРЅР°СЏ" << endl;
         }
-        cout << "Количество сторон: " << sides_count << endl;
+        cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ: " << sides_count << endl;
 
         if (sides_count > 0 && sides != nullptr) {
-            cout << "Стороны: ";
+            cout << "РЎС‚РѕСЂРѕРЅС‹: ";
             for (int i = 0; i < sides_count; i++) {
                 cout << char('a' + i) << "=" << sides[i];
                 if (i < sides_count - 1) cout << " ";
             }
             cout << endl;
 
-            cout << "Углы: ";
+            cout << "РЈРіР»С‹: ";
             for (int i = 0; i < sides_count; i++) {
                 cout << char('A' + i) << "=" << angles[i];
                 if (i < sides_count - 1) cout << " ";
@@ -60,7 +60,7 @@ public:
         double angle_A, double angle_B, double angle_C)
         : a(side_a), b(side_b), c(side_c), A(angle_A), B(angle_B), C(angle_C) {
         sides_count = 3;
-        name = "Треугольник";
+        name = "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
 
         sides = new double[3] {a, b, c};
         angles = new double[3] {A, B, C};
@@ -74,14 +74,14 @@ public:
     virtual void print_info() override {
         cout << name << ":" << endl;
         if (check()) {
-            cout << "Правильная" << endl;
+            cout << "РџСЂР°РІРёР»СЊРЅР°СЏ" << endl;
         }
         else {
-            cout << "Неправильная" << endl;
+            cout << "РќРµРїСЂР°РІРёР»СЊРЅР°СЏ" << endl;
         }
-        cout << "Количество сторон: " << sides_count << endl;
-        cout << "Стороны: a=" << a << " b=" << b << " c=" << c << endl;
-        cout << "Углы: A=" << A << " B=" << B << " C=" << C << endl;
+        cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ: " << sides_count << endl;
+        cout << "РЎС‚РѕСЂРѕРЅС‹: a=" << a << " b=" << b << " c=" << c << endl;
+        cout << "РЈРіР»С‹: A=" << A << " B=" << B << " C=" << C << endl;
         cout << endl;
     }
 };
@@ -90,7 +90,7 @@ public:
     RightTriangle(double side_a, double side_b, double side_c,
         double angle_A, double angle_B)
         : Triangle(side_a, side_b, side_c, angle_A, angle_B, 90.0) {
-        name = "Прямоугольный треугольник";
+        name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
     }
 
     virtual bool check() override {
@@ -102,7 +102,7 @@ public:
     IsoscelesTriangle(double side_a, double side_b,
         double angle_A, double angle_B)
         : Triangle(side_a, side_b, side_a, angle_A, angle_B, angle_A) {
-        name = "Равнобедренный треугольник";
+        name = "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
     }
 
     virtual bool check() override {
@@ -115,7 +115,7 @@ class EquilateralTriangle : public Triangle {
 public:
     EquilateralTriangle(double side)
         : Triangle(side, side, side, 60.0, 60.0, 60.0) {
-        name = "Равносторонний треугольник";
+        name = "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
     }
 
     virtual bool check() override {
@@ -138,7 +138,7 @@ public:
         : a(side_a), b(side_b), c(side_c), d(side_d),
         A(angle_A), B(angle_B), C(angle_C), D(angle_D) {
         sides_count = 4;
-        name = "Четырёхугольник";
+        name = "Р§РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРє";
 
         sides = new double[4] {a, b, c, d};
         angles = new double[4] {A, B, C, D};
@@ -152,14 +152,14 @@ public:
     virtual void print_info() override {
         cout << name << ":" << endl;
         if (check()) {
-            cout << "Правильная" << endl;
+            cout << "РџСЂР°РІРёР»СЊРЅР°СЏ" << endl;
         }
         else {
-            cout << "Неправильная" << endl;
+            cout << "РќРµРїСЂР°РІРёР»СЊРЅР°СЏ" << endl;
         }
-        cout << "Количество сторон: " << sides_count << endl;
-        cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << endl;
-        cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << endl;
+        cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ: " << sides_count << endl;
+        cout << "РЎС‚РѕСЂРѕРЅС‹: a=" << a << " b=" << b << " c=" << c << " d=" << d << endl;
+        cout << "РЈРіР»С‹: A=" << A << " B=" << B << " C=" << C << " D=" << D << endl;
         cout << endl;
     }
 };
@@ -167,7 +167,7 @@ class Rectangle : public Quadrilateral {
 public:
     Rectangle(double side_a, double side_b)
         : Quadrilateral(side_a, side_b, side_a, side_b, 90.0, 90.0, 90.0, 90.0) {
-        name = "Прямоугольник";
+        name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє";
     }
 
     virtual bool check() override {
@@ -184,7 +184,7 @@ class Square : public Rectangle {
 public:
     Square(double side)
         : Rectangle(side, side) {
-        name = "Квадрат";
+        name = "РљРІР°РґСЂР°С‚";
     }
 
     virtual bool check() override {
@@ -196,7 +196,7 @@ class Parallelogram : public Quadrilateral {
 public:
     Parallelogram(double side_a, double side_b, double angle_A, double angle_B)
         : Quadrilateral(side_a, side_b, side_a, side_b, angle_A, angle_B, angle_A, angle_B) {
-        name = "Параллелограмм";
+        name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј";
     }
 
     virtual bool check() override {
@@ -211,7 +211,7 @@ class Rhombus : public Parallelogram {
 public:
     Rhombus(double side, double angle_A, double angle_B)
         : Parallelogram(side, side, angle_A, angle_B) {
-        name = "Ромб";
+        name = "Р РѕРјР±";
     }
 
     virtual bool check() override {
